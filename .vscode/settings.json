@@ -1,0 +1,13 @@
+{
+  "workbench.colorCustomizations": {
+    "gitDecoration.addedResourceForeground": "#0dc90d",        // Newly created files (Green)
+    "gitDecoration.modifiedResourceForeground": "#a020f0",     // Modified / not pushed (Violet)
+    "gitDecoration.deletedResourceForeground": "#ff0000",      // Deleted files (Red)
+    "gitDecoration.untrackedResourceForeground": "#2dc12d",    // Untracked files (Green)
+    "gitDecoration.conflictingResourceForeground": "#ff0000",  // Merge conflicts (Red)
+    "gitDecoration.ignoredResourceForeground": "#808080"       // Ignored files (Gray)
+  },
+    "files.exclude": {
+    "**/__pycache__": true
+  }
+}
