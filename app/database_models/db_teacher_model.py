@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Date, Enum, Boolean
+from sqlalchemy import Column, Integer, String, ForeignKey
 from database import Base
 
 class DBTeacherModel(Base):
