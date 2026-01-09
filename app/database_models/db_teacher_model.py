@@ -1,13 +1,13 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Date, Enum, Boolean
 from database import Base
 
 class DBTeacherModel(Base):
-    __tablename__ = "teachers"
+    __tablename__ = 'teachers'
 
-    t_id = Column(Integer, primary_key=True, index=True)
+    t_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String(50), nullable=False)
     subject = Column(String(50), nullable=False)
 
     # Foreign key relationship to classes table and class_id column
-    class_id = Column(Integer, ForeignKey("classes.class_id"))
-    salary = Column(Float(10,2),nullable=False)
+    class_id = Column(Integer, ForeignKey('classes.class_id'), nullable=False)
+    salary = Column(Integer, nullable=False)

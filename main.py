@@ -14,7 +14,7 @@ Base.metadata.create_all(bind=engine)
 # Import routes after tables are created
 from app.routes.class_routes import router as class_router
 from app.routes.student_routes import router as student_router
-from app.routes.teacher_rotes import router as teacher_router
+from app.routes.teacher_routes import router as teacher_router
 
 @app.get("/")
 def greet():
