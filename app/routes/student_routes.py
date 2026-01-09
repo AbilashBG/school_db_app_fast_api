@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Depends
-from app.models.student_model import StudentModel
+from app.models.student_model import StudentModel,GenderEnum
 from database import getDB, session
 from app.database_models.db_student_model import DBStudentModel
 from sqlalchemy.orm import Session
@@ -11,10 +11,10 @@ def greet():
     return {"message": "Welcome to the Student Routes!"}
 
 studentList = [
-    StudentModel(s_id=1, name="Alice", class_id=1, dob="2005-06-15", gender="Female", fees_has_paid=True),
-    StudentModel(s_id=2, name="Bob", class_id=2, dob="2004-08-22", gender="Male", fees_has_paid=False),
-    StudentModel(s_id=3, name="Charlie", class_id=1, dob="2005-03-10", gender="Male", fees_has_paid=True),
-    StudentModel(s_id=4, name="Diana", class_id=3, dob="2003-12-05", gender="Female", fees_has_paid=False),
+    StudentModel(s_id=1, name="Alice", class_id=1, dob="2005-06-15", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=2, name="Bob", class_id=2, dob="2004-08-22", gender=GenderEnum.Male, fees_has_paid=False),
+    StudentModel(s_id=3, name="Charlie", class_id=1, dob="2005-03-10", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=4, name="Diana", class_id=3, dob="2003-12-05", gender=GenderEnum.Female, fees_has_paid=False),
 ]
 
 def initDB():
