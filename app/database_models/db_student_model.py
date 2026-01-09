@@ -1,5 +1,11 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Date, Enum, Boolean
 from database import Base
+from enum import Enum as PyEnum
+
+class GenderEnum(PyEnum):
+    Male = "Male"
+    Female = "Female"
+    Other = "Other"
 
 class DBStudentModel(Base):
     __tablename__ = 'students'
@@ -10,5 +16,9 @@ class DBStudentModel(Base):
     # Foreign key relationship to classes table and class_id column
     class_id = Column(Integer, ForeignKey('classes.class_id'))
     dob = Column(Date)
-    gender = Column(String(10), nullable=False)
+    # enum class is used here for gender
+    gender = Column(
+        Enum(GenderEnum, name="gender_enum"),
+        nullable=False
+    )
     fees_has_paid = Column(Boolean, default=False)  
