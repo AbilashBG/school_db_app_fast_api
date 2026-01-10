@@ -9,5 +9,5 @@ class DBTeacherModel(Base):
     subject = Column(String(50), nullable=False)
 
     # Foreign key relationship to classes table and class_id column
-    class_id = Column(Integer, ForeignKey('classes.class_id'), nullable=False)
+    class_id = Column(Integer, ForeignKey('classes.class_id',ondelete="CASCADE"), nullable=False)
     salary = Column(Integer, nullable=False)

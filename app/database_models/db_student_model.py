@@ -14,7 +14,7 @@ class DBStudentModel(Base):
     name = Column(String(50), nullable=False)
     
     # Foreign key relationship to classes table and class_id column
-    class_id = Column(Integer, ForeignKey('classes.class_id'))
+    class_id = Column(Integer, ForeignKey('classes.class_id',ondelete="CASCADE"),nullable=False)
     dob = Column(Date)
     # enum class is used here for gender
     gender = Column(
