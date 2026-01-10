@@ -22,12 +22,26 @@ class TeacherResponse(BaseModel):
     class Config:
         from_attributes = True
 
+# pagination model for student list
+class PaginatedStudent(BaseModel):
+    total:int
+    page:int
+    limit:int
+    data:List[StudentResponse]
+
+# pagination model for teacher list
+class PaginatedTeacher(BaseModel):
+    total:int
+    page:int
+    limit:int
+    data:List[TeacherResponse]    
+
 
 class ClassDetailResponse(BaseModel):
     class_id:int
     class_name:str
-    students:List[StudentResponse]
-    teachers:List[TeacherResponse]
+    students:PaginatedStudent
+    teachers:PaginatedTeacher
 
     # It (Config) tells Pydantic: “You are allowed to read data from ORM objects, not just dicts.”
     class Config:
