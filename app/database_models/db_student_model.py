@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Date, Enum, Boolean
 from database import Base
 from enum import Enum as PyEnum
+from sqlalchemy.orm import relationship
 
 class GenderEnum(PyEnum):
     Male = "Male"
@@ -22,3 +23,6 @@ class DBStudentModel(Base):
         nullable=False
     )
     fees_has_paid = Column(Boolean, default=False)  
+
+    # back_populates connects both sides =>class & students
+    class_obj = relationship("DBClassModel", back_populates="students")

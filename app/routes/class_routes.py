@@ -3,6 +3,7 @@ from app.models.class_model import ClassModel
 from database import getDB, session
 from app.database_models.db_class_model import DBClassModel
 from sqlalchemy.orm import Session
+from app.models.class_detail_model import ClassDetailResponse
 
 
 
@@ -111,3 +112,21 @@ def updateClassById(class_id: int, updated_class: ClassModel, db: Session = Depe
     db.commit()
     db.refresh(class_item)
     return {"message": "Class updated successfully", "class": class_item}
+
+
+
+# get class details *********************************************************************
+# You are telling FastAPI: “Whatever I return from this API, convert it into this Pydantic model (ClassDetailResponse) before sending to client.”
+
+@router.get("/classDetails/{class_id}", response_model=ClassDetailResponse)
+def get_class_details(class_id: int, db: Session = Depends(getDB)):
+    class_obj = (
+        db.query(DBClassModel)
+        .filter(DBClassModel.class_id == class_id)
+        .first()
+    )
+
+    if not class_obj:
+        raise HTTPException(status_code=404, detail="Class not found")
+
+    return class_obj

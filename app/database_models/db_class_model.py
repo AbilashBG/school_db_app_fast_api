@@ -12,11 +12,15 @@ class DBClassModel(Base):
     students = relationship(
         "DBStudentModel",
         cascade="all, delete",
-        passive_deletes=True
+        passive_deletes=True,
+        # back_populates is used here for get student details from class module
+        back_populates="class_obj",
     )
 
     teachers = relationship(
         "DBTeacherModel",
         cascade="all, delete",
-        passive_deletes=True
+        passive_deletes=True,
+        # back_populates is used here for get teacher details from class module
+        back_populates="class_obj",
     )

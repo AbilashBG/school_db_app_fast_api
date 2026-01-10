@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from database import Base
+from sqlalchemy.orm import relationship
 
 class DBTeacherModel(Base):
     __tablename__ = 'teachers'
@@ -11,3 +12,6 @@ class DBTeacherModel(Base):
     # Foreign key relationship to classes table and class_id column
     class_id = Column(Integer, ForeignKey('classes.class_id',ondelete="CASCADE"), nullable=False)
     salary = Column(Integer, nullable=False)
+
+    # back_populates connects both sides =>class & teachers
+    class_obj = relationship("DBClassModel", back_populates="teachers")
