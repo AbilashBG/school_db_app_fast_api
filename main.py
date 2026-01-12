@@ -19,6 +19,7 @@ from app.routes.student_routes import router as student_router
 from app.routes.teacher_routes import router as teacher_router
 from app.routes.subject_routes import router as subject_routes
 from app.routes.mark_routes import router as mark_router
+from app.routes.student_analytics_routes import router as analytics_router
 
 @app.get("/")
 def greet():
@@ -29,4 +30,5 @@ app.include_router(student_router)
 app.include_router(teacher_router)
 app.include_router(subject_routes)
 app.include_router(mark_router)
+app.include_router(analytics_router)
 

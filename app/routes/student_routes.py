@@ -11,11 +11,56 @@ def greet():
     return {"message": "Welcome to the Student Routes!"}
 
 studentList = [
-    StudentModel(s_id=1, name="Alice", class_id=1, dob="2005-06-15", gender=GenderEnum.Female, fees_has_paid=True),
-    StudentModel(s_id=2, name="Bob", class_id=2, dob="2004-08-22", gender=GenderEnum.Male, fees_has_paid=False),
-    StudentModel(s_id=3, name="Charlie", class_id=1, dob="2005-03-10", gender=GenderEnum.Male, fees_has_paid=True),
-    StudentModel(s_id=4, name="Diana", class_id=3, dob="2003-12-05", gender=GenderEnum.Female, fees_has_paid=False),
+
+    # -------- Class 1 (5 students) --------
+    StudentModel(s_id=1, name="Alice", class_id=1, dob="2005-01-10", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=2, name="Bob", class_id=1, dob="2005-02-12", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=3, name="Cathy", class_id=1, dob="2005-03-14", gender=GenderEnum.Female, fees_has_paid=False),
+    StudentModel(s_id=4, name="David", class_id=1, dob="2005-04-16", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=5, name="Eva", class_id=1, dob="2005-05-18", gender=GenderEnum.Female, fees_has_paid=False),
+
+    # -------- Class 2 (15 students) --------
+    StudentModel(s_id=6, name="Frank", class_id=2, dob="2004-01-11", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=7, name="Grace", class_id=2, dob="2004-02-13", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=8, name="Henry", class_id=2, dob="2004-03-15", gender=GenderEnum.Male, fees_has_paid=False),
+    StudentModel(s_id=9, name="Irene", class_id=2, dob="2004-04-17", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=10, name="Jack", class_id=2, dob="2004-05-19", gender=GenderEnum.Male, fees_has_paid=False),
+    StudentModel(s_id=11, name="Karen", class_id=2, dob="2004-06-21", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=12, name="Leo", class_id=2, dob="2004-07-23", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=13, name="Mona", class_id=2, dob="2004-08-25", gender=GenderEnum.Female, fees_has_paid=False),
+    StudentModel(s_id=14, name="Nick", class_id=2, dob="2004-09-27", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=15, name="Olivia", class_id=2, dob="2004-10-29", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=16, name="Paul", class_id=2, dob="2004-11-05", gender=GenderEnum.Male, fees_has_paid=False),
+    StudentModel(s_id=17, name="Queen", class_id=2, dob="2004-12-07", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=18, name="Ryan", class_id=2, dob="2004-01-09", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=19, name="Sophia", class_id=2, dob="2004-02-11", gender=GenderEnum.Female, fees_has_paid=False),
+    StudentModel(s_id=20, name="Tom", class_id=2, dob="2004-03-13", gender=GenderEnum.Male, fees_has_paid=True),
+
+    # -------- Class 3 (12 students) --------
+    StudentModel(s_id=21, name="Uma", class_id=3, dob="2003-01-14", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=22, name="Victor", class_id=3, dob="2003-02-16", gender=GenderEnum.Male, fees_has_paid=False),
+    StudentModel(s_id=23, name="Wendy", class_id=3, dob="2003-03-18", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=24, name="Xavier", class_id=3, dob="2003-04-20", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=25, name="Yara", class_id=3, dob="2003-05-22", gender=GenderEnum.Female, fees_has_paid=False),
+    StudentModel(s_id=26, name="Zack", class_id=3, dob="2003-06-24", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=27, name="Alan", class_id=3, dob="2003-07-26", gender=GenderEnum.Male, fees_has_paid=False),
+    StudentModel(s_id=28, name="Bella", class_id=3, dob="2003-08-28", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=29, name="Chris", class_id=3, dob="2003-09-30", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=30, name="Daisy", class_id=3, dob="2003-10-02", gender=GenderEnum.Female, fees_has_paid=False),
+    StudentModel(s_id=31, name="Ethan", class_id=3, dob="2003-11-04", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=32, name="Fiona", class_id=3, dob="2003-12-06", gender=GenderEnum.Female, fees_has_paid=True),
+
+    # -------- Class 4 (8 students) --------
+    StudentModel(s_id=33, name="George", class_id=4, dob="2002-01-08", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=34, name="Hannah", class_id=4, dob="2002-02-10", gender=GenderEnum.Female, fees_has_paid=False),
+    StudentModel(s_id=35, name="Ian", class_id=4, dob="2002-03-12", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=36, name="Julia", class_id=4, dob="2002-04-14", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=37, name="Kevin", class_id=4, dob="2002-05-16", gender=GenderEnum.Male, fees_has_paid=False),
+    StudentModel(s_id=38, name="Lily", class_id=4, dob="2002-06-18", gender=GenderEnum.Female, fees_has_paid=True),
+    StudentModel(s_id=39, name="Mark", class_id=4, dob="2002-07-20", gender=GenderEnum.Male, fees_has_paid=True),
+    StudentModel(s_id=40, name="Nina", class_id=4, dob="2002-08-22", gender=GenderEnum.Female, fees_has_paid=False),
 ]
+
 
 def initDB():
     db = session()
