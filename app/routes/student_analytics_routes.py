@@ -4,9 +4,9 @@ from app.database_models.db_student_model import DBStudentModel
 from sqlalchemy.orm import Session
 
 
-import matplotlib
+import matplotlib # type: ignore
 matplotlib.use("Agg")  # non-GUI backend (SAFE for FastAPI)
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # type: ignore
 from sqlalchemy import func
 from fastapi.responses import StreamingResponse
 from io import BytesIO
