@@ -20,15 +20,18 @@ from app.routes.teacher_routes import router as teacher_router
 from app.routes.subject_routes import router as subject_routes
 from app.routes.mark_routes import router as mark_router
 from app.routes.student_analytics_routes import router as analytics_router
+from app.routes.login_routes import router as login_router
 
 @app.get("/")
 def greet():
     return {"message": "Welcome to the School Database API!"}
 
+app.include_router(login_router)
 app.include_router(class_router)
 app.include_router(student_router)
 app.include_router(teacher_router)
 app.include_router(subject_routes)
 app.include_router(mark_router)
 app.include_router(analytics_router)
+
 
